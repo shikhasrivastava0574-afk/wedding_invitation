@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize audio settings
   if (bgAudio) {
     bgAudio.volume = 0.8;
+    bgAudio.load();
   }
 
   // Format time (e.g. 125 -> 2:05)
@@ -79,9 +80,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Time and duration updates
   if (bgAudio) {
-    bgAudio.addEventListener('loadedmetadata', () => {
-      durationTimeLabel.textContent = formatTime(bgAudio.duration);
-    });
+    const setDuration = () => {
+      if (bgAudio.duration && !isNaN(bgAudio.duration)) {
+        durationTimeLabel.textContent = formatTime(bgAudio.duration);
+      }
+    };
+
+    if (bgAudio.readyState >= 1) {
+      setDuration();
+    } else {
+      bgAudio.addEventListener('loadedmetadata', setDuration);
+    }
 
     bgAudio.addEventListener('timeupdate', () => {
       const progress = (bgAudio.currentTime / bgAudio.duration) * 100;
@@ -159,6 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     envelopeWrapper.addEventListener('click', openEnvelope);
+    envelopeWrapper.addEventListener('touchstart', openEnvelope, { passive: true });
   }
 
 
