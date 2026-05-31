@@ -118,19 +118,48 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Autoplay fallback: start playing on first user interaction with screen
-  const autoPlayOnInteraction = () => {
-    if (!isPlaying) {
-      togglePlay();
-    }
-    document.removeEventListener('click', autoPlayOnInteraction);
-    document.removeEventListener('touchstart', autoPlayOnInteraction);
-    document.removeEventListener('scroll', autoPlayOnInteraction);
-  };
+  // === Envelope Opening Animation & Music Trigger ===
+  const envelopeScreen = document.getElementById('envelope-screen');
+  const envelopeWrapper = document.getElementById('envelope-wrapper');
 
-  document.addEventListener('click', autoPlayOnInteraction);
-  document.addEventListener('touchstart', autoPlayOnInteraction);
-  document.addEventListener('scroll', autoPlayOnInteraction);
+  if (envelopeWrapper && envelopeScreen) {
+    // Disable body scroll while envelope is active
+    document.body.style.overflow = 'hidden';
+
+    const openEnvelope = () => {
+      if (envelopeWrapper.classList.contains('open')) return;
+
+      envelopeWrapper.classList.add('open');
+
+      // Start playing audio upon opening the envelope (counts as user interaction)
+      if (bgAudio) {
+        bgAudio.play().then(() => {
+          isPlaying = true;
+          if (playerContainer) playerContainer.classList.add('playing');
+          if (floatingToggle) floatingToggle.classList.add('playing');
+          if (playSvg) playSvg.style.display = 'none';
+          if (pauseSvg) pauseSvg.style.display = 'block';
+          updateFloatingIcon(true);
+        }).catch(err => {
+          console.log("Audio playback failed or prevented by browser.", err);
+        });
+      }
+
+      // Fade out the envelope screen after flap opens and card slide completes (approx 2.2 seconds)
+      setTimeout(() => {
+        envelopeScreen.style.opacity = '0';
+        // Restore scrolling
+        document.body.style.overflow = '';
+        
+        // Remove the screen from DOM/layout after transition ends (1s duration in CSS)
+        setTimeout(() => {
+          envelopeScreen.style.display = 'none';
+        }, 1000);
+      }, 2200);
+    };
+
+    envelopeWrapper.addEventListener('click', openEnvelope);
+  }
 
 
   // === Falling Flower Petals Canvas Animation ===
