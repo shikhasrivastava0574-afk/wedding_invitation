@@ -869,6 +869,26 @@ footer p {
   transform: translateY(-5px);
 }
 
+.envelope-ganesha {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  background: url('assets/ganesha.png') no-repeat center center;
+  background-size: contain;
+  z-index: 45; /* Sits on top of the envelope flap (40) */
+  pointer-events: none; /* Let click pass through to the envelope wrapper */
+  transition: all 0.5s ease;
+}
+
+.envelope-wrapper.open .envelope-ganesha {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.5);
+  transition: all 0.4s ease;
+}
+
 .envelope-flap {
   position: absolute;
   top: 0;
@@ -1027,6 +1047,11 @@ footer p {
   .envelope-wrapper {
     width: 320px;
     height: 230px;
+  }
+  .envelope-ganesha {
+    width: 75px;
+    height: 75px;
+    top: 10px;
   }
   .envelope-flap {
     border-left-width: 160px;
