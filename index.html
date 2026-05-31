@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wedding Invitation | Dr. Praggya & Dr. Siddharth</title>
+  <meta name="description" content="You are cordially invited to celebrate the wedding ceremony of Dr. Praggya and Dr. Siddharth. Save the dates from December 9th to 12th.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Flower Petals Canvas -->
+  <canvas id="petal-canvas"></canvas>
+
+  <!-- Background Music Element -->
+  <audio id="bg-audio" loop>
+    <source src="https://archive.org/download/lp_sitar-music-of-india_kartick-kumar/disc1/02.01.%20Dhun%20Jhinjhoti.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Floating Audio Play/Pause Button -->
+  <div id="audio-toggle" class="audio-controller" title="Play/Pause Ambient Music">
+    <svg viewBox="0 0 24 24">
+      <path d="M8 5v14l11-7z"/>
+    </svg>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <!-- Traditional Arch Corner Accents -->
+    <div class="hero-corner hero-corner-tl"></div>
+    <div class="hero-corner hero-corner-tr"></div>
+    <div class="hero-corner hero-corner-bl"></div>
+    <div class="hero-corner hero-corner-br"></div>
+
+    <div class="mandala-bg"></div>
+
+    <div class="wedding-logo">Save The Date</div>
+    <div class="greetings">With Joyful Hearts We Invite You To Celebrate The Wedding Of</div>
+    
+    <div class="couple-portrait-wrapper">
+      <img src="assets/hero.png" alt="Dr. Praggya and Dr. Siddharth Anime Wedding Illustration" class="couple-portrait">
+    </div>
+
+    <div class="couple-names">
+      Dr. Praggya <span>&</span> Dr. Siddharth
+      <div style="font-size: 1.6rem; font-weight: 600; margin-top: 10px; font-family: var(--font-serif); letter-spacing: 2px;">डॉ. प्रज्ञा संग डॉ. सिद्धार्थ</div>
+    </div>
+
+    <div class="wedding-tagline">DECEMBER 9 - 12 | THE ROYAL CELEBRATIONS</div>
+    <button class="scroll-btn" onclick="document.getElementById('welcome').scrollIntoView({behavior: 'smooth'})">View Details</button>
+  </section>
+
+  <!-- Welcome / Blessing Section -->
+  <section class="section-wrapper" id="welcome">
+    <h2 class="section-title">
+      Auspicious Beginnings
+      <span class="section-title-icon">❀</span>
+    </h2>
+    <div class="welcome-card">
+      <p class="shloka">
+        मङ्गलम् भगवान् विष्णुः, मङ्गलम् गरुडध्वजः।<br>
+        मङ्गलम् पुण्डरीकाक्षः, मङ्गलाय तनो हरीः॥
+      </p>
+      <p>
+        In the spirit of love and lifelong devotion, we invite you to join us in celebrating the holy union of <strong>Dr. Praggya</strong> and <strong>Dr. Siddharth</strong>. Your presence and blessings will make our special days truly memorable.
+      </p>
+      <p style="margin-top: 20px; border-top: 1px dashed var(--secondary-color); padding-top: 15px; font-weight: 500;">
+        स्नेह और आदर के साथ, हम आपको <strong>डॉ. प्रज्ञा</strong> और <strong>डॉ. सिद्धार्थ</strong> के पावन विवाह उत्सव में सम्मिलित होने के लिए सादर आमंत्रित करते हैं। आपकी गरिमामयी उपस्थिति एवं मंगलमयी आशीर्वाद वर-वधू के वैवाहिक जीवन को सुखमय बनाएंगे।
+      </p>
+      <p style="font-family: var(--font-cursive); font-size: 1.8rem; color: var(--secondary-color); margin-top: 15px;">
+        ~ Groom & Bride (वर एवं वधू)
+      </p>
+    </div>
+  </section>
+
+  <!-- Timeline / Schedule Section -->
+  <section class="section-wrapper alternate" id="itinerary">
+    <h2 class="section-title">
+      The Wedding Itinerary
+      <span class="section-title-icon">Timeline of Love</span>
+    </h2>
+    
+    <div class="timeline-container">
+      
+      <!-- Event 1: Ring Ceremony -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="timeline-icon">💍</div>
+          <span class="timeline-date">DECEMBER 9</span>
+          <h3 class="timeline-title">Ring Ceremony<br><span style="font-size: 1.1rem; color: var(--secondary-color); font-weight: 600;">सगाई समारोह</span></h3>
+          <p class="timeline-description">
+            A promise sealed with love, rings, and romantic tunes. Join us as the couple takes their first steps towards forever under a sky of stars and music.
+            <span style="display: block; margin-top: 10px; font-size: 0.85rem; color: var(--primary-color); border-top: 1px solid rgba(212,175,55,0.2); padding-top: 8px; font-weight: 500;">
+              सगाई एवं कॉकटेल संध्या: स्नेह और विश्वास के एक नए सफर की शुरुआत।
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Event 2: Haldi, Mehndi & Sangeet -->
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-icon">✨</div>
+          <span class="timeline-date">DECEMBER 10</span>
+          <h3 class="timeline-title">Haldi, Mehndi & Sangeet<br><span style="font-size: 1.1rem; color: var(--secondary-color); font-weight: 600;">हल्दी, मेहंदी एवं संगीत</span></h3>
+          <p class="timeline-description">
+            Dancing beats, vibrant yellow hues of haldi, and deep red mehndi swirls on hands. Get ready to dance the night away in celebration of the beautiful bond!
+            <span style="display: block; margin-top: 10px; font-size: 0.85rem; color: var(--primary-color); border-top: 1px solid rgba(212,175,55,0.2); padding-top: 8px; font-weight: 500;">
+              गीतों की धुन, हल्दी का रंग और हाथों में सजी पिया के नाम की मेहंदी।
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Event 3: Wedding (Shaadi) -->
+      <div class="timeline-item left">
+        <div class="timeline-content">
+          <div class="timeline-icon">🔥</div>
+          <span class="timeline-date">DECEMBER 11</span>
+          <h3 class="timeline-title">The Royal Wedding<br><span style="font-size: 1.1rem; color: var(--secondary-color); font-weight: 600;">शुभ विवाह</span></h3>
+          <p class="timeline-description">
+            The auspicious day. Under a canopy of marigolds and amidst holy Vedic chants, watch Dr. Praggya and Dr. Siddharth take their seven sacred vows around the holy fire.
+            <span style="display: block; margin-top: 10px; font-size: 0.85rem; color: var(--primary-color); border-top: 1px solid rgba(212,175,55,0.2); padding-top: 8px; font-weight: 500;">
+              वैदिक मंत्रोच्चार और पवित्र अग्नि के सात फेरों के साथ दो पवित्र आत्माओं का मिलन।
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Event 4: Vidai -->
+      <div class="timeline-item right">
+        <div class="timeline-content">
+          <div class="timeline-icon">🌸</div>
+          <span class="timeline-date">DECEMBER 12</span>
+          <h3 class="timeline-title">Vidai<br><span style="font-size: 1.1rem; color: var(--secondary-color); font-weight: 600;">विदाई समारोह</span></h3>
+          <p class="timeline-description">
+            A beautiful and emotional farewell. Help us shower the newly married couple with blessings and warm wishes as they embark on their beautiful new journey together.
+            <span style="display: block; margin-top: 10px; font-size: 0.85rem; color: var(--primary-color); border-top: 1px solid rgba(212,175,55,0.2); padding-top: 8px; font-weight: 500;">
+              शुभाशीष और अश्रुपूरित विदाई, नए जीवन की ओर बढ़ते कदम।
+            </span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Venue Section -->
+  <section class="section-wrapper alternate" id="venue-section">
+    <h2 class="section-title">
+      Wedding Venues
+      <span class="section-title-icon">उत्सव स्थल</span>
+    </h2>
+
+    <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; max-width: 1000px; width: 100%; z-index: 5;">
+      
+      <!-- Venue 1: Pre-Wedding -->
+      <div class="welcome-card" style="flex: 1; min-width: 300px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">📍</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px;">
+            Mansarovar Palace<br>
+            <span style="font-size: 1.1rem; color: var(--secondary-color); font-weight: 600;">मानसरोवर पैलेस</span>
+          </h3>
+          <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--primary-color); text-transform: uppercase; font-weight: 700; margin-bottom: 15px; letter-spacing: 1px;">
+            Ring Ceremony, Haldi, Mehndi & Sangeet<br>
+            (सगाई, हल्दी, मेहंदी एवं संगीत)
+          </p>
+          <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--text-dark); margin-bottom: 20px; line-height: 1.6;">
+            5/5/56A, Beniganj, Jalpa Nala, Faizabad Industrial Area 2, Ayodhya, Uttar Pradesh 224001
+          </p>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Mansarovar+Palace+Beniganj+Jalpa+Nala+Faizabad+Industrial+Area+Ayodhya" target="_blank" class="scroll-btn" style="text-decoration: none; display: inline-block; padding: 10px 20px; font-size: 0.8rem; margin-top: 15px;">
+          View Map / मार्ग देखें
+        </a>
+      </div>
+
+      <!-- Venue 2: Wedding & Vidai -->
+      <div class="welcome-card" style="flex: 1; min-width: 300px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="font-size: 2.5rem; margin-bottom: 15px;">🏰</div>
+          <h3 style="font-family: var(--font-serif); font-size: 1.6rem; color: var(--primary-color); margin-bottom: 10px;">
+            Hotel Krinoscco<br>
+            <span style="font-size: 1.1rem; color: var(--secondary-color); font-weight: 600;">होटल क्रिनोस्को</span>
+          </h3>
+          <p style="font-family: var(--font-sans); font-size: 0.85rem; color: var(--primary-color); text-transform: uppercase; font-weight: 700; margin-bottom: 15px; letter-spacing: 1px;">
+            Wedding & Vidai<br>
+            (शुभ विवाह एवं विदाई)
+          </p>
+          <p style="font-family: var(--font-sans); font-size: 0.95rem; color: var(--text-dark); margin-bottom: 20px; line-height: 1.6;">
+            Main Ayodhya-Faizabad Road, Amaniganj, Ayodhya, Uttar Pradesh 224001
+          </p>
+        </div>
+        <a href="https://www.google.com/maps/search/?api=1&query=Hotel+Krinoscco+Amaniganj+Ayodhya+Faizabad+Road" target="_blank" class="scroll-btn" style="text-decoration: none; display: inline-block; padding: 10px 20px; font-size: 0.8rem; margin-top: 15px;">
+          View Map / मार्ग देखें
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Music Section -->
+  <section class="section-wrapper" id="music-player-section">
+    <h2 class="section-title">
+      Wedding Melodies
+      <span class="section-title-icon">मांगलिक संगीत</span>
+    </h2>
+
+    <div class="music-player-container" id="music-player-container">
+      <div class="music-card">
+        <div class="music-mandala-wrapper">
+          <img src="assets/hero.png" alt="Couple Portrait" class="music-album-art">
+        </div>
+        
+        <h3 class="track-title">Dhun Jhinjhoti</h3>
+        <p class="track-artist">Traditional Sitar Instrumental</p>
+        
+        <!-- Visualizer Bars -->
+        <div class="visualizer" id="visualizer">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+
+        <div class="player-controls">
+          <button id="main-play-btn" class="main-play-btn" title="Play Melodies">
+            <!-- Play SVG -->
+            <svg id="play-svg" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <!-- Pause SVG -->
+            <svg id="pause-svg" viewBox="0 0 24 24" style="display:none;"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          </button>
+          
+          <div class="progress-box">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="duration-time">0:00</span>
+          </div>
+
+          <div class="volume-box" style="margin: 0 auto;">
+            <svg viewBox="0 0 24 24" style="width:18px; height:18px; margin-right:8px;"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+            <input type="range" id="volume-slider" min="0" max="100" value="80">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-greetings">Dr. Praggya & Dr. Siddharth</div>
+    <p>December 9th - 12th, 2026</p>
+    <p style="margin-top: 15px; font-size: 0.75rem; opacity: 0.75;">Made with 💖 for Praggya & Siddharth</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
