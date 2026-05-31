@@ -881,6 +881,7 @@ footer p {
   z-index: 45; /* Sits on top of the envelope flap (40) */
   pointer-events: none; /* Let click pass through to the envelope wrapper */
   transition: all 0.5s ease;
+  mix-blend-mode: screen;
 }
 
 .envelope-wrapper.open .envelope-ganesha {
